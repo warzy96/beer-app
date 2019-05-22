@@ -20,14 +20,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation project(':domain')
     implementation 'androidx.appcompat:appcompat:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation "com.squareup.retrofit2:retrofit:$project.ext.retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$project.ext.okhttpVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$project.ext.gsonVersion"
+    implementation "com.squareup.okio:okio:$project.ext.okioVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$project.ext.rxJavaVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.ext.rxJavaAdapterVersion"
 }

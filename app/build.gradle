@@ -16,13 +16,36 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':data')
+    implementation project(':domain')
+
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation "com.squareup.retrofit2:retrofit:$project.ext.retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$project.ext.okhttpVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$project.ext.gsonVersion"
+    implementation "com.squareup.okio:okio:$project.ext.okioVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$project.ext.httplogginginterceptorVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$project.ext.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$project.ext.rxAndroidVersion"
+    implementation "com.google.dagger:dagger:$project.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.ext.daggerAnnotationProcessorVersion"
+    implementation "com.google.dagger:dagger-android:$project.ext.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$project.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.ext.daggerVersion"
+    implementation "com.jakewharton:butterknife:$project.ext.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$project.ext.butterKnifeVersion"
+
 }
