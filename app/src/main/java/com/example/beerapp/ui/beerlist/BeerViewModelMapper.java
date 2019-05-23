@@ -15,4 +15,8 @@ public final class BeerViewModelMapper {
         return new BeersViewModel(beerViewModels);
 
     }
+
+    public BeerViewModel mapBeerViewModel(Beer beer) {
+        return new BeerViewModel(beer);
+    }
 }

@@ -22,8 +22,8 @@ public final class BeerClient {
         return beerService.fetchRandomBeer().map(beerMapper::mapBeer);
     }
 
-    public Single<List<Beer>> getAllBeers() {
-        return beerService.fetchAllBeers().map(beerMapper::mapBeers);
+    public Single<List<Beer>> getAllBeers(int page) {
+        return beerService.fetchAllBeers(page).map(beerMapper::mapBeers);
     }
 
     public Single<List<Beer>> searchBeers(final String beerName, final String brewedBefore) {

@@ -10,7 +10,7 @@ public interface BeerRepository {
 
     Single<Beer> getRandomBeer();
 
-    Single<List<Beer>> getAllBeers();
+    Single<List<Beer>> getAllBeers(int page);
 
     Single<List<Beer>> searchBeers(final String name, final String brewedBefore);
 }

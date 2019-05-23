@@ -8,6 +8,22 @@ import java.util.List;
 
 public final class BeerMapper {
 
+    public Beer mapBeer(final List<ApiBeer> apiBeers) {
+        if (apiBeers == null) {
+            return Beer.EMPTY;
+        }
+        final ApiBeer apiBeer = apiBeers.get(0);
+        return new Beer(apiBeer.id,
+                apiBeer.name,
+                apiBeer.tagLine == null ? Beer.EMPTY.getTagline() : apiBeer.tagLine,
+                apiBeer.firstBrewed == null ? Beer.EMPTY.getFirstBrewed() : apiBeer.firstBrewed,
+                apiBeer.description == null ? Beer.EMPTY.getDescription() : apiBeer.description,
+                apiBeer.imageUrl == null ? Beer.EMPTY.getImageUrl() : apiBeer.imageUrl,
+                apiBeer.alcoholByVolume == 0.0 ? Beer.EMPTY.getAlcoholByVolume() : apiBeer.alcoholByVolume,
+                apiBeer.foodPairing == null ? Beer.EMPTY.getFoodPairing() : apiBeer.foodPairing,
+                apiBeer.brewersTips == null ? Beer.EMPTY.getBrewersTips() : apiBeer.brewersTips);
+    }
+
     public Beer mapBeer(final ApiBeer apiBeer) {
         if (apiBeer == null) {
             return Beer.EMPTY;

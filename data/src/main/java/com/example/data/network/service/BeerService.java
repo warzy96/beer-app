@@ -11,10 +11,10 @@ import retrofit2.http.Query;
 public interface BeerService {
 
     @GET("beers/random")
-    Single<ApiBeer> fetchRandomBeer();
+    Single<List<ApiBeer>> fetchRandomBeer();
 
     @GET("beers")
-    Single<List<ApiBeer>> fetchAllBeers();
+    Single<List<ApiBeer>> fetchAllBeers(@Query("page") int page);
 
     @GET("beers")
     Single<List<ApiBeer>> searchBeers(@Query("beer_name") String name, @Query("brewed_before") String brewedBefore);

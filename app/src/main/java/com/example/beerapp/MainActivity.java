@@ -51,10 +51,6 @@ public class MainActivity extends DaggerActivity {
 
         MenuItem randomBeerMenuItem = menu.findItem(R.id.action_get_random_beer);
         randomBeerMenuItem.setVisible(true);
-        randomBeerMenuItem.setOnMenuItemClickListener(item -> {
-            router.showRandomBeerScreen();
-            return true;
-        });
 
         MenuItem dateItemMenu = menu.findItem(R.id.action_set_brewed_before_date);
         dateItemMenu.setVisible(false);
