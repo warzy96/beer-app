@@ -1,7 +1,9 @@
 package com.example.beerapp.di.fragment.module;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 
+import com.example.beerapp.di.activity.ForActivity;
 import com.example.beerapp.di.fragment.DaggerFragment;
 import com.example.beerapp.di.fragment.FragmentScope;
 import com.example.beerapp.ui.beerlist.BeerListAdapter;
@@ -29,7 +31,7 @@ public final class FragmentModule {
 
     @Provides
     @FragmentScope
-    public BeerListAdapter provideBeerListAdapter(final LayoutInflater layoutInflater, final ImageLoader imageLoader) {
-        return new BeerListAdapter(layoutInflater, imageLoader);
+    public BeerListAdapter provideBeerListAdapter(final LayoutInflater layoutInflater, final ImageLoader imageLoader, @ForActivity final Context context) {
+        return new BeerListAdapter(layoutInflater, imageLoader, context);
     }
 }
