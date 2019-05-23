@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.beerapp"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -17,8 +17,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
+        sourceCompatibility = '8'
+        targetCompatibility = '8'
     }
 }
 
@@ -47,5 +47,9 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-android-processor:$project.ext.daggerVersion"
     implementation "com.jakewharton:butterknife:$project.ext.butterKnifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$project.ext.butterKnifeVersion"
+    implementation "androidx.recyclerview:recyclerview:$project.ext.recyclerViewVersion"
+    implementation "com.github.bumptech.glide:glide:$project.ext.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$project.ext.glideVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$project.ext.rxJavaAdapterVersion"
 
 }

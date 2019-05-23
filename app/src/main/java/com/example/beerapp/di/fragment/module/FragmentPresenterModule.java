@@ -5,6 +5,8 @@ import com.example.beerapp.di.fragment.FragmentComponent;
 import com.example.beerapp.di.fragment.FragmentScope;
 import com.example.beerapp.ui.beerlist.BeerListContract;
 import com.example.beerapp.ui.beerlist.BeerListPresenter;
+import com.example.beerapp.ui.searchlist.SearchBeersContract;
+import com.example.beerapp.ui.searchlist.SearchBeersPresenter;
 
 import dagger.Module;
 import dagger.Provides;
@@ -29,6 +31,14 @@ public final class FragmentPresenterModule {
         final BeerListPresenter beerListPresenter = new BeerListPresenter();
         getFragmentComponent().inject(beerListPresenter);
         return beerListPresenter;
+    }
+
+    @Provides
+    @FragmentScope
+    public SearchBeersContract.Presenter provideSearchBeersPresenter() {
+        final SearchBeersPresenter searchBeersPresenter = new SearchBeersPresenter();
+        getFragmentComponent().inject(searchBeersPresenter);
+        return searchBeersPresenter;
     }
 
     @Provides

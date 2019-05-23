@@ -32,6 +32,9 @@ allprojects {
         httplogginginterceptorVersion = '3.11.0'
         rxAndroidVersion = '2.1.1'
         butterKnifeVersion = '10.0.0'
+        recyclerViewVersion = '1.0.0'
+        glideVersion = '4.9.0'
+        rxJavaAdapterVersion = '2.4.0'
     }
 }
 

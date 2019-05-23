@@ -6,6 +6,7 @@ import com.example.beerapp.di.application.module.ApplicationModule;
 import com.example.beerapp.di.application.module.DataModule;
 import com.example.beerapp.di.application.module.ThreadingModule;
 import com.example.beerapp.di.application.module.UseCaseModule;
+import com.example.beerapp.di.application.module.UtilsModule;
 
 import javax.inject.Singleton;
 
@@ -17,7 +18,8 @@ import dagger.Component;
                 ApplicationModule.class,
                 DataModule.class,
                 UseCaseModule.class,
-                ThreadingModule.class
+                ThreadingModule.class,
+                UtilsModule.class
         }
 )
 public interface ApplicationComponent extends ApplicationComponentInjects {
@@ -30,6 +32,7 @@ public interface ApplicationComponent extends ApplicationComponentInjects {
                     .dataModule(new DataModule())
                     .threadingModule(new ThreadingModule())
                     .useCaseModule(new UseCaseModule())
+                    .utilsModule(new UtilsModule())
                     .build();
         }
 

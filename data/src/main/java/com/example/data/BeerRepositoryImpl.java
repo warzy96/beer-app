@@ -25,4 +25,9 @@ public final class BeerRepositoryImpl implements BeerRepository {
     public Single<List<Beer>> getAllBeers() {
         return beerClient.getAllBeers();
     }
+
+    @Override
+    public Single<List<Beer>> searchBeers(final String name, final String brewedBefore) {
+        return beerClient.searchBeers(name, brewedBefore);
+    }
 }

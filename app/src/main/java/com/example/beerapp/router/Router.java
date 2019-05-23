@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.beerapp.R;
 import com.example.beerapp.ui.beerlist.BeerListFragment;
+import com.example.beerapp.ui.searchlist.SearchBeersFragment;
 
 import javax.inject.Inject;
 
@@ -25,5 +26,17 @@ public final class Router {
                 .setReorderingAllowed(true)
                 .add(CONTAINER_ID, (Fragment) BeerListFragment.newInstance(), BeerListFragment.TAG)
                 .commit();
+    }
+
+    public void showSearchBeerScreen() {
+        fragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(CONTAINER_ID, (Fragment) SearchBeersFragment.newInstance(), SearchBeersFragment.TAG)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void showRandomBeerScreen() {
+
     }
 }

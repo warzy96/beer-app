@@ -5,5 +5,5 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$project.ext.rxJavaVersion"
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+sourceCompatibility = "8"
+targetCompatibility = "8"

@@ -25,4 +25,9 @@ public final class BeerClient {
     public Single<List<Beer>> getAllBeers() {
         return beerService.fetchAllBeers().map(beerMapper::mapBeers);
     }
+
+    public Single<List<Beer>> searchBeers(final String beerName, final String brewedBefore) {
+        String brewedBeforeSearchParam = brewedBefore.replaceAll(" ", "_");
+        return beerService.searchBeers(beerName, brewedBeforeSearchParam).map(beerMapper::mapBeers);
+    }
 }

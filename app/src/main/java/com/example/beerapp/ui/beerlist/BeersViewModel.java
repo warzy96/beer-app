@@ -9,4 +9,8 @@ public final class BeersViewModel {
     public BeersViewModel(List<BeerViewModel> beerViewModelList) {
         this.beerViewModelList = beerViewModelList;
     }
+
+    public List<BeerViewModel> getBeerViewModelList() {
+        return beerViewModelList;
+    }
 }

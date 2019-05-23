@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BeerApp</string>
+    <string name="beer_image">beer image</string>
+    <string name="search_beers">search beers</string>
+    <string name="random_beer">random beer</string>
+    <string name="set_date">set date</string>
+    <string name="no_results_found">No results found</string>
 </resources>

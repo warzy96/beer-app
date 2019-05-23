@@ -6,6 +6,7 @@ import java.util.List;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface BeerService {
 
@@ -14,4 +15,7 @@ public interface BeerService {
 
     @GET("beers")
     Single<List<ApiBeer>> fetchAllBeers();
+
+    @GET("beers")
+    Single<List<ApiBeer>> searchBeers(@Query("beer_name") String name, @Query("brewed_before") String brewedBefore);
 }

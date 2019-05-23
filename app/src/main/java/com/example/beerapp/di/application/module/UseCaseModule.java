@@ -2,6 +2,7 @@ package com.example.beerapp.di.application.module;
 
 import com.example.domain.interactor.GetAllBeersUseCase;
 import com.example.domain.interactor.GetRandomBeerUseCase;
+import com.example.domain.interactor.SearchBeersUseCase;
 import com.example.domain.repository.BeerRepository;
 
 import javax.inject.Singleton;
@@ -22,5 +23,11 @@ public final class UseCaseModule {
     @Singleton
     GetRandomBeerUseCase provideGetRandomBeerUseCase(final BeerRepository beerRepository) {
         return new GetRandomBeerUseCase(beerRepository);
+    }
+
+    @Provides
+    @Singleton
+    SearchBeersUseCase provideSearchBeersUseCase(final BeerRepository beerRepository) {
+        return new SearchBeersUseCase(beerRepository);
     }
 }
